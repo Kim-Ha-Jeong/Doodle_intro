@@ -1,5 +1,5 @@
 {
-  "name": "doodle",
+  "name": "react-typescript-11th",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.7",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "@material-ui/core": "^4.11.3",
+    "@types/styled-components": "^5.1.0",
+    "axios": "^0.21.1",
+    "moment": "^2.26.0",
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-burger-menu": "^3.0.3",
+    "react-dom": "16.13.1",
+    "react-icons": "^4.2.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.9.3"
   }
 }
