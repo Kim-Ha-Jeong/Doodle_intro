@@ -3,6 +3,7 @@ import App from "next/app";
 import Head from "next/head";
 
 import styled, { createGlobalStyle } from "styled-components";
+import "antd/dist/antd.css";
 
 const GlobalStyle = createGlobalStyle`
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -60,6 +61,106 @@ html,
           body > div:first-child{
             height: 100%;
           }
+          html,
+body {
+  margin: 0;
+}
+
+#header {
+  font-family: sans-serif;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+  top: 45%;
+  position: relative;
+}
+
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-button {
+    position: fixed;
+    width: 24px;
+    height: 20px;
+    right: 5%;
+    top: 21.3px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: black;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 30px;
+  width: 30px;
+  right : 10%!important;
+  top : 8%!important;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: black;
+  height: 30px!important;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-menu-wrap {
+  width: 250px!important;
+  background: white;
+  box-shadow: 0px -5px 20px 0px rgb(0 0 0 / 11%);
+  top: 0px;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: black;
+  margin-top: 45%;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0px;
+}
+
+.ant-carousel{
+  width: 100%;
+  margin-top: 15%;
+}
+
+.ant-carousel .slick-dots{
+  z-index : 0!important;
+}
 `;
 
 export default class Timeline extends App {
@@ -71,13 +172,9 @@ export default class Timeline extends App {
         <Head>
           <title>doodle</title>
         </Head>
-        <BestWrapper>
-          <Grey />
           <Wrapper>
             <Component {...pageProps} />
           </Wrapper>
-          <Grey />
-        </BestWrapper>
       </>
     );
   }
@@ -85,7 +182,6 @@ export default class Timeline extends App {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 37.5rem;
   min-height: 100%;
   background-color: white;
   position: relatvie;

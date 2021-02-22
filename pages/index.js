@@ -1,27 +1,16 @@
-import React, {useState, useEffect} from "react";
-import styled from "styled-components";
-import axios from 'axios';
-import { useRouter } from 'next/router';
+import React, { useState, useEffect } from "react";
 
-import Sidebar from '../src/components/molecules/sidebar.js';
-import Header from '../src/components/molecules/header.js'
-import MainBanner from "../src/components/molecules/mainbanner.js";
-import PhotoReview from "../src/components/organisms/photoReview.js";
+import MainSlide from '../src/components/organisms/mainSlide.js';
+import Product from '../src/components/molecules/product.js';
+import Header from '../src/components/organisms/header.js';
 
 export default function Home() {
 
   return (
-    <Wrapper>
+    <>
       <Header />
-      <MainBanner/>
-    </Wrapper>
+      <MainSlide />
+      <Product />
+    </>
   );
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
