@@ -1,37 +1,19 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { slide as Menu } from "react-burger-menu";
 
-//import Sidebar from './sidebar.js';
-import Shop from './shop.js';
-import About from "./about.js";
-import Contact from "./contact.js";
+import Shop from "../atoms/shop.js";
+import About from "../atoms/about.js";
+import Contact from "../atoms/contact.js";
+import Instagram from "../atoms/instagram.js";
 
-import { slide as Menu } from 'react-burger-menu'
-
-export default function Sidebar({active}) {
-    const open = (e) => {
-        e.preventDefault();
-    };
-
+export default function Sidebar (props){
     return (
-        <Wrapper>
-            <Menu right>
-                <Shop active={active}/>
-                <About active={active}/>
-                <Contact active={active}/>
-            </Menu>
-            <MenuImage src='/menu.png' onClick={open} />
-        </Wrapper>
+        // Pass on our props
+        <Menu {...props}>
+           <Shop />
+           <About />
+           <Contact />
+           <Instagram />
+        </Menu>
     );
-}
-const Wrapper = styled.div`
-    width: 100%;
-    height: fit-content;
-    justify-items: right;
-`;
-const MenuImage = styled.img`
-    width: 20%;
-    display: block;
-    margin: 7.5% 0 7% 70%;
-    display: flex-end;
-`
+};

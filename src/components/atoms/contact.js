@@ -2,22 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function Contact({ active }) {
+export default function Contact() {
   return (
     <Wrapper>
       <Link href='/contact'>
-        <a>
-          {active === "shop" && (
-            <>
-              <Label color='#ff9045'>Contact</Label>
-            </>
-          )}
-          {active != "shop" && (
-            <>
-              <Label color='#666'>Contact</Label>
-            </>
-          )}
-        </a>
+        <Label color='#666'>Contact</Label>
       </Link>
     </Wrapper>
   );
@@ -25,6 +14,7 @@ export default function Contact({ active }) {
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
+  margin : 10% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +25,6 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 25px;
+  font-weight: bold;
 `;

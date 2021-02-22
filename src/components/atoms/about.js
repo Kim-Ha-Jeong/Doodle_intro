@@ -2,29 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function Shop({active}) {
+export default function About() {
   return (
     <Wrapper>
-      <Link href='/shop' as='/shop'>
-        <a>
-          {active === "shop" && (
-            <>
-              <Label color='#ff9045'>Shop</Label>
-            </>
-          )}
-          {active != "shop" && (
-            <>
-              <Label color='#666'>Shop</Label>
-            </>
-          )}
-        </a>
+      <Link href='/about'>
+        <Label color='#666'>About Us</Label>
       </Link>
     </Wrapper>
   );
 }
+
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
+  margin : 10% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +26,6 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 25px;
+  font-weight: bold;
 `;

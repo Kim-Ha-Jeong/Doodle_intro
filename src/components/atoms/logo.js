@@ -18,9 +18,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    max-width: 35%;
 `;
 const LogoImage = styled.img`
-    width: 55%;
+    width: 75%;
     display: block;
-    margin: 10% 15%;
+    margin: 13% 20%;
 `

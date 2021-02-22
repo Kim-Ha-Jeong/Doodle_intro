@@ -2,46 +2,14 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { Carousel } from "antd";
+import MainSlide from '../src/components/organisms/mainSlide.js';
 
 export default function Order() {
-  const [ImgURL, setImgURL] = useState('');
-  const [Doodle, setDoodle] = useState('');
-  const onChangeDoodle = (event) => {
-
-    event.preventDefault();
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      setDoodle(file);
-      setImgURL(reader.result);
-    }
-    reader.readAsDataURL(file);
-
-  };
-  const onClickButton = (e) => {
-    axios.post('http://ec2-15-164-172-128.ap-northeast-2.compute.amazonaws.com/api/user/', Doodle)
-    .then(function (response) {
-      console.log(response);
-      console.log("전송 성공");
-    })
-    .catch(function (error) {
-      console.log(error.response);
-      console.log("전송 실패");
-    })
-};
-let profile_preview = null;
-    if(ImgURL !== ''){
-      profile_preview = <img className='profile_preview' src={ImgURL} height="100%"></img>
-    }
   return (
-    <Wrapper>
-      <Thumbnail>{profile_preview}</Thumbnail>
-      <InputFile type="file" 
-                 name="doodle" 
-                 onChange={onChangeDoodle}/>
-      <DoodleButton onClick={onClickButton}>사진 전송</DoodleButton>
-      <PhotoCheck></PhotoCheck>
-    </Wrapper>
+      <Wrapper>
+			<MainSlide />
+		</Wrapper>
   );
 }
 

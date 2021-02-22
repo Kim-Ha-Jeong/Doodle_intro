@@ -3,18 +3,18 @@ import styled from "styled-components";
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
+import Logo from '../src/components/atoms/logo.js';
 import Sidebar from '../src/components/molecules/sidebar.js';
-import Header from '../src/components/molecules/header.js'
-import MainBanner from "../src/components/molecules/mainbanner.js";
-import PhotoReview from "../src/components/organisms/photoReview.js";
+import MainSlide from "../src/components/organisms/mainSlide.js";
 
 export default function Home() {
 
   return (
-    <Wrapper>
-      <Header />
-      <MainBanner/>
-    </Wrapper>
+    <div id="home">
+      <Logo />
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"home"} right/>
+      <MainSlide />
+    </div>
   );
 }
 
