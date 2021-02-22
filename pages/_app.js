@@ -66,9 +66,12 @@ body {
   margin: 0;
 }
 
-#home {
+#header {
   font-family: sans-serif;
-  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+
 }
 
 #page-wrap {
@@ -152,8 +155,12 @@ body {
 
 .ant-carousel{
   width: 100%;
+  margin-top: 15%;
 }
 
+.ant-carousel .slick-dots{
+  z-index : 0!important;
+}
 `;
 
 export default class Timeline extends App {

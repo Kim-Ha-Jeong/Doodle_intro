@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function Instagram() {
+export default function productImage({path, name}) {
   return (
     <Wrapper>
-      <a href='https://www.instagram.com/mydoodle.official/'>
-        where is my waller?
-      </a>
+      <Link href={path}>
+        <img src={name} width="100%" />
+      </Link>
     </Wrapper>
   );
 }
@@ -15,7 +15,7 @@ export default function Instagram() {
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
-  margin : 10% 0;
+  margin : 5% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
