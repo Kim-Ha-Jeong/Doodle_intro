@@ -7,10 +7,10 @@ import ProductImage from '../atoms/productImage.js';
 export default function Product() {
   return (
     <Wrapper>
-      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5254327538'} name={'/slim.jpg'} />
-      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5362152100'} name={'/bumper.jpg'} />
-      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5362172389'} name={'/card.jpg'} />
-      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5265774469'} name={'/smartTok.jpg'} />
+      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5254327538'} name={'/productImage/slim.jpg'} />
+      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5362152100'} name={'/productImage/bumper.jpg'} />
+      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5362172389'} name={'/productImage/card.jpg'} />
+      <ProductImage path={'https://smartstore.naver.com/my_doodle/products/5265774469'} name={'/productImage/smartTok.jpg'} />
     </Wrapper>
   );
 }
