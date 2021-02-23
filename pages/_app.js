@@ -161,6 +161,22 @@ body {
 .ant-carousel .slick-dots{
   z-index : 0!important;
 }
+.Feed{
+  width: 100%;
+  margin-bottom: 10%;
+}
+.Feed > a > img{
+  width: 33.3%;
+}
+.Feed > a: nth-child(10){
+  display: none; 
+}
+.Feed > a: nth-child(11){
+  display: none; 
+}
+.Feed > a: nth-child(12){
+  display: none; 
+}
 `;
 
 export default class Timeline extends App {
@@ -185,16 +201,4 @@ const Wrapper = styled.div`
   min-height: 100%;
   background-color: white;
   position: relatvie;
-`;
-
-const Grey = styled.div`
-  flex: 1;
-  background-color: #ccc;
-  z-index: 100;
-`;
-
-const BestWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  min-height: 100%;
 `;
