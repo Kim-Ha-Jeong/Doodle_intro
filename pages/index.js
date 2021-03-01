@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import MainSlide from '../src/components/organisms/mainSlide.js';
-import Product from '../src/components/molecules/product.js';
+import MainProduct from '../src/components/molecules/mainProduct.js';
 import Header from '../src/components/organisms/header.js';
 import InstaPost from '../src/components/molecules/instaPost.js';
 
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Header />
       <MainSlide />
-      <Product />
+      <MainProduct />
       <InstaPost />
     </>
   );

@@ -4,6 +4,7 @@ import Head from "next/head";
 
 import styled, { createGlobalStyle } from "styled-components";
 import "antd/dist/antd.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GlobalStyle = createGlobalStyle`
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -176,6 +177,18 @@ body {
 }
 .Feed > a: nth-child(12){
   display: none; 
+}
+.col-6{
+  padding: 0 2%!important;
+}
+.container{
+  padding: 0 7%!important;
+}
+a{
+  color: black!important;
+}
+a:hover, a:visited, a:link{
+  text-decoration: none!important;
 }
 `;
 

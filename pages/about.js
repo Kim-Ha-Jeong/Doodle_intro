@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import styled from "styled-components";
 
 import Header from '../src/components/organisms/header.js';
