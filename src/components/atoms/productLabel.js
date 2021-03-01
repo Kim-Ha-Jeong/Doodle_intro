@@ -1,19 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 
-export default function Shop({ active }) {
+export default function productLabel({text}) {
   return (
-    <Wrapper>
-      <Link href='/shop' as='/shop'>
-        <Label color='#666'>Shop</Label>
-      </Link>
-    </Wrapper>
+      <Label>{text}</Label>
   );
 }
+
 const Wrapper = styled.div`
   width: 100%;
-  margin: 30% 0 10% 0;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -25,6 +20,6 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 10px;
   font-weight: bold;
 `;

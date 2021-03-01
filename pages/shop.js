@@ -2,11 +2,15 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 
 import Header from '../src/components/organisms/header.js';
+import ShopLink from '../src/components/atoms/shopLink.js';
+import ProductGroup from '../src/components/organisms/productGroup.js'
 
 export default function Shop() {
   return (
       <Wrapper>
         <Header/>
+        <ShopLink/>
+        <ProductGroup />
 		</Wrapper>
   );
 }
