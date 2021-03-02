@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function ShopLink() {
+export default function Title({link,text}) {
   return (
     <Wrapper>
-      <Link href='/shop' as='/shop'>
-        <Label color='#666'>Shop</Label>
+      <Link href={link} as={link}>
+        <Label color='#666'>{text}</Label>
       </Link>
     </Wrapper>
   );

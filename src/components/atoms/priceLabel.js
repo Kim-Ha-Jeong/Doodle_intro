@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function productLabel({text1, text2}) {
+export default function productLabel({price}) {
   return (
-      <Label>{text1}<br/>{text2}</Label>
+      <Label>{price}</Label>
   );
 }
 const Label = styled.label`
@@ -13,6 +13,6 @@ const Label = styled.label`
   flex-direction: column;
   align-items: center;
   font-size: 10px;
-  margin-top: .5rem;
-  text-align: center;
+  font-weight: bold;
+  margin-bottom: .5rem;
 `;

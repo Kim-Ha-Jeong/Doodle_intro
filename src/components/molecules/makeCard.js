@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 
 import ProductImage from '../atoms/productImage.js';
 import ProductLabel from '../atoms/productLabel.js';
 
-export default function Card({ path, name, text }) {
+export default function MakeCard({ name, text1, text2, price }) {
     return (
         <Wrapper>
-            <a href={path}>
             <ProductImage name={name} />
-            <ProductLabel text={text} />
-            </a>
+            <ProductLabel text1={text1} text2={text2} />
         </Wrapper>
     );
 }
@@ -19,6 +16,7 @@ export default function Card({ path, name, text }) {
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
+  margin: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;

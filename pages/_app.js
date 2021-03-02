@@ -5,6 +5,7 @@ import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 import "antd/dist/antd.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@brainhubeu/react-carousel/lib/style.css'
 
 const GlobalStyle = createGlobalStyle`
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -156,7 +157,7 @@ body {
 
 .ant-carousel{
   width: 100%;
-  margin-top: 15%;
+  overflow: hidden;
 }
 
 .ant-carousel .slick-dots{
@@ -190,6 +191,35 @@ a{
 a:hover, a:visited, a:link{
   text-decoration: none!important;
 }
+
+ul {
+  display: flex;
+  width: 100%;
+}
+
+li {
+  flex: 1 1 0px;
+  transition: transform 300ms ease 100ms;
+}
+
+li:after {
+  content: "";
+  display: block;
+  padding-top: 70%;
+}
+
+ul:hover li {
+  transform: translateX(-25%);
+}
+
+li:hover ~ li {
+  transform: translateX(25%);
+}
+
+ul li:hover {
+  transform: scale(1.2);
+}
+
 `;
 
 export default class Timeline extends App {

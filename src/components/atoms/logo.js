@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     max-width: 35%;
 `;
 const LogoImage = styled.img`
-    width: 75%;
+    width: 100px;
     display: block;
-    margin: 13% 20%;
+    margin: 15px 20%;
 `
