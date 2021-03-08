@@ -192,31 +192,31 @@ a:hover, a:visited, a:link{
   text-decoration: none!important;
 }
 
-ul {
+.BrainhubCarousel__track {
   display: flex;
   width: 100%;
 }
 
-li {
+.BrainhubCarouselItem{
   flex: 1 1 0px;
   transition: transform 300ms ease 100ms;
 }
 
-li:after {
+.BrainhubCarouselItem:after {
   content: "";
   display: block;
   padding-top: 70%;
 }
 
-ul:hover li {
+.BrainhubCarousel__track:hover .BrainhubCarouselItem{
   transform: translateX(-25%);
 }
 
-li:hover ~ li {
+.BrainhubCarouselItem:hover ~ .BrainhubCarouselItem {
   transform: translateX(25%);
 }
 
-ul li:hover {
+.BrainhubCarousel__track .BrainhubCarouselItem:hover {
   transform: scale(1.2);
 }
 
@@ -229,7 +229,7 @@ export default class Timeline extends App {
       <>
         <GlobalStyle />
         <Head>
-          <title>doodle</title>
+          <title>Doodle</title>
         </Head>
           <Wrapper>
             <Component {...pageProps} />

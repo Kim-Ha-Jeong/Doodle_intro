@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from 'styled-components';
 
 import MainSlide from '../src/components/organisms/mainSlide.js';
 import MainProduct from '../src/components/molecules/mainProduct.js';
@@ -9,10 +10,17 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <MainSlide />
-      <MainProduct />
-      <InstaPost />
+      <Container>
+        <Header />
+        <MainSlide />
+        <MainProduct />
+        <InstaPost />
+      </Container>
     </>
   );
 }
+
+const Container = styled.div`
+ width: 80%;
+ text-align: center;
+`
