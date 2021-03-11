@@ -1,5 +1,5 @@
 {
-  "name": "react-typescript-11th",
+  "name": "doodle-intro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,7 +24,7 @@
     "react-burger-menu": "^3.0.3",
     "react-dom": "16.13.1",
     "react-icons": "^4.2.0",
-    "react-instagram-authless-feed": "github:jamesmoriarty/react-instagram-authless-feed#v1.1.1",
+    "react-instagram-authless-feed": "github:jamesmoriarty/react-instagram-authless-feed#v2.0.0",
     "react-instagram-embed": "^2.0.0",
     "react-multi-carousel": "^2.6.1",
     "react-responsive-carousel": "^3.2.12",

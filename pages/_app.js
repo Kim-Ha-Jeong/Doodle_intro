@@ -5,7 +5,8 @@ import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 import "antd/dist/antd.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@brainhubeu/react-carousel/lib/style.css'
+import '@brainhubeu/react-carousel/lib/style.css';
+import theme from '../src/style/theme.js';
 
 const GlobalStyle = createGlobalStyle`
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -170,15 +171,6 @@ body {
 .Feed > a > img{
   width: 33.3%;
 }
-.Feed > a: nth-child(10){
-  display: none; 
-}
-.Feed > a: nth-child(11){
-  display: none; 
-}
-.Feed > a: nth-child(12){
-  display: none; 
-}
 .col-6{
   padding: 0 2%!important;
 }
@@ -232,7 +224,7 @@ export default class Timeline extends App {
           <title>Doodle</title>
         </Head>
           <Wrapper>
-            <Component {...pageProps} />
+            <Component {...pageProps}/>
           </Wrapper>
       </>
     );

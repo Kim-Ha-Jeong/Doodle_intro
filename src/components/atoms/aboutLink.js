@@ -1,31 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function About() {
+import {Col} from 'antd';
+import styled from 'styled-components';
+import theme from '../../style/theme.js';
+
+export default function About({active}) {
   return (
-    <Wrapper>
+    <Col md={4}>
       <Link href='/about'>
-        <Label color='#666'>About Us</Label>
+        <a>
+          {active === 'about' && (
+            <>
+              <Label theme={theme} color='#ff9045'>About Us</Label>
+            </>
+          )}
+          {active != 'about' && (
+            <>
+              <Label theme={theme}>About Us</Label>
+            </>
+          )}
+        </a>
       </Link>
-    </Wrapper>
+    </Col>
   );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  margin : 10% 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const Label = styled.label`
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 22.5px;
   font-weight: bold;
+  color: ${props => props.color || 'black'};
+
+  @media ${(props) => props.theme.mobile} {
+    margin: 12% auto;
+  }
 `;

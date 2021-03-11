@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import * as emailjs from 'emailjs-com'
 import { Row, Form, Input, Button } from 'antd';
 
-import styled from "styled-components";
+import styled from 'styled-components';
+import theme from '../../style/theme.js';
 
 export default function Email() {
     const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
+        labelCol: { span: 4 },
+        wrapperCol: { span: 20 },
     };
 
     const {TextArea} = Input;
@@ -51,10 +52,10 @@ export default function Email() {
         })
     }
     return (
-        <Container>
+        <Container theme={theme}>
             <Form {...layout} onSubmit={handleSubmit}>
                 <Form.Item
-                    label='Email address'
+                    label='Email'
                 >
                     <Input
                         type="email"
@@ -62,7 +63,7 @@ export default function Email() {
                         value={values.email}
                         className="text-primary"
                         onChange={handleChange}
-                        placeholder="Enter email"
+                        placeholder="Enter your email"
                     />
                 </Form.Item>
                 <Form.Item
@@ -99,11 +100,11 @@ export default function Email() {
                         placeholder={"Message"}
                     />
                 </Form.Item>
-                <Form.Item>
+                <CustomItem theme={theme}>
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                </Form.Item>
+                </CustomItem>
             </Form>
         </Container>
     )
@@ -111,9 +112,14 @@ export default function Email() {
 }
 
 const Container = styled.div`
-  width: 80%;
+  width: 100%;
+  margin-top: 5%;
   height: fit-content;
   align-items: center;
+
+  @media ${(props) => props.theme.mobile}{
+      margin-top: 0;
+  }
 `;
 
 styled(Form)`
@@ -121,5 +127,16 @@ styled(Form)`
 `
 
 styled(Form.Item)`
-text-align: center;
+text-align: left;
+`
+styled.label`
+text-align:left;
+`
+const CustomItem = styled(Form.Item)`
+  margin-left: 30%;
+  text-align: center;
+
+  @media ${(props) => props.theme.mobile}{
+      margin-left: 0%;
+  }
 `

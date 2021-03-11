@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Card from '../molecules/productCard.js';
 
 export default function ProductGroup() {
 
     return (
-        <Container>
+        <Wrapper>
             <Row>
                 <Col xs={6} md={3}>
                     <Card path={'https://smartstore.naver.com/my_doodle/products/5254327538'}
@@ -38,6 +38,12 @@ export default function ProductGroup() {
                         price={'15,000원'} />
                 </Col>
             </Row>
-        </Container>
+        </Wrapper>
     );
 }
+
+const Wrapper = styled.div`
+    width: 100%;
+    text-align: center;
+    display: flex;
+`

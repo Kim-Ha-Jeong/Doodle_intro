@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
+
+import styled from 'styled-components';
+import theme from '../src/style/theme';
 
 import Header from '../src/components/organisms/header.js';
 import Title from '../src/components/atoms/title.js';
@@ -7,18 +9,19 @@ import Email from '../src/components/organisms/email.js';
 
 export default function Contact() {
     return (
-        <Wrapper>
-            <Header />
+        <Container theme={theme}>
+            <Header active='contact' />
             <Title link={'/contact'} text={'Contact'} />
             <Email />
-        </Wrapper>
+        </Container>
     );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const Container = styled.div`
+ width: 70%;
+ margin: 0 auto;
+
+ @media ${(props) => props.theme.mobile} {
+   width: 80%;
+ }
+`

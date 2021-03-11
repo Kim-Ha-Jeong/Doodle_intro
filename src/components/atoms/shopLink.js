@@ -1,30 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function ShopLink() {
+import {Col} from 'antd';
+import styled from 'styled-components';
+import theme from '../../style/theme.js';
+
+export default function ShopLink({active}) {
   return (
-    <Wrapper>
+    <Col md={4}>
       <Link href='/shop' as='/shop'>
-        <Label color='#666'>Shop</Label>
+        <a>
+          {active === 'shop' && (
+            <>
+              <Label theme={theme} color='#ff9045'>Shop</Label>
+            </>
+          )}
+          {active != 'shop' && (
+            <>
+              <Label theme={theme}>Shop</Label>
+            </>
+          )}
+        </a>
       </Link>
-    </Wrapper>
+    </Col>
   );
 }
-const Wrapper = styled.div`
-  width: 100%;
-  margin: 20% 0 5% 0;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+
 const Label = styled.label`
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 22.5px;
   font-weight: bold;
+  color: ${props => props.color || 'black'};
+
+  @media ${(props) => props.theme.mobile} {
+    margin: 12% auto;
+  }
 `;

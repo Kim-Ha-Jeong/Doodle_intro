@@ -1,22 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
+
+import styled from 'styled-components';
+import theme from '../../style/theme.js'
+import { Col } from 'antd'
 
 export default function ProductLink({ path, name }) {
     return (
-        <Wrapper>
+        <CustomCol md={6} theme={theme}>
             <Link href={path}>
                 <img src={name} width="100%" />
             </Link>
-        </Wrapper>
+        </CustomCol>
     );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  margin : 5% 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const CustomCol = styled(Col)`
+    margin-top: 0;
+    @media ${(props) => props.theme.mobile} {
+        margin-top: 5%;
+    }
+`

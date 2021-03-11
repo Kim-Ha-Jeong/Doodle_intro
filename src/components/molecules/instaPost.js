@@ -6,7 +6,7 @@ import Feed from 'react-instagram-authless-feed';
 export default function instaPost() {
   return (
     <Wrapper>
-      <Feed userName='mydoodle.official' className="Feed" classNameLoading="Loading" />
+      <Feed userName='mydoodle.official' className='Feed' classNameLoading='Loading' limit='9' />
     </Wrapper>
   );
 }
@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
   margin : 5% 0;
-  padding: 0 5%;
   display: flex;
   flex-direction: column;
   align-items: center;

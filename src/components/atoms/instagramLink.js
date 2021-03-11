@@ -1,31 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
+
+import {Col} from 'antd';
+import styled from 'styled-components';
+import theme from '../../style/theme.js';
 
 export default function Instagram() {
   return (
-    <Wrapper>
+    <Col md={4}>
       <Link href='https://www.instagram.com/mydoodle.official/'>
-        <Label color='#666'>Instagram</Label>
+        <Label theme={theme}>Instagram</Label>
       </Link>
-    </Wrapper>
+    </Col>
   );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  margin : 10% 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const Label = styled.label`
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 22.5px;
   font-weight: bold;
+  color: 'black';
+
+  @media ${(props) => props.theme.mobile} {
+    margin: 12% auto;
+  }
 `;

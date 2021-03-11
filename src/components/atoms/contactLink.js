@@ -1,30 +1,41 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 
-export default function Contact() {
+import {Col} from 'antd';
+import styled from 'styled-components';
+import theme from '../../style/theme.js';
+
+export default function Contact({ active }) {
   return (
-    <Wrapper>
+    <Col md={4}>
       <Link href='/contact'>
-        <Label color='#666'>Contact</Label>
+        <a>
+          {active === 'contact' && (
+            <>
+              <Label theme={theme} color='#ff9045'>Contact</Label>
+            </>
+          )}
+          {active != 'contact' && (
+            <>
+              <Label theme={theme}>Contact</Label>
+            </>
+          )}
+        </a>
       </Link>
-    </Wrapper>
+    </Col>
   );
 }
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  margin : 10% 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const Label = styled.label`
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 22.5px;
   font-weight: bold;
+  color: ${props => props.color || 'black'};
+
+  @media ${(props) => props.theme.mobile} {
+    margin: 12% auto;
+  }
 `;

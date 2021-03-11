@@ -1,27 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
+
+import theme from '../../style/theme.js';
+import styled from 'styled-components';
+import {Col} from 'antd';
 
 export default function Logo() {
     return (
-        <Wrapper>
+        <CustomCol md={8} theme={theme}>
             <Link href='/'>
                 <a>
-                    <LogoImage src='/logo.png' />
+                    <LogoImage theme={theme} src='/logo.png' />
                 </a>
             </Link>
-        </Wrapper>
+        </CustomCol>
     );
 }
-const Wrapper = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    max-width: 35%;
-`;
 const LogoImage = styled.img`
     width: 100px;
     display: block;
-    margin: 15px 20%;
+    margin: 8px 0;
+
+    @media ${(props) => props.theme.mobile}{
+        margin : 15px;
+    }
+`
+
+const CustomCol = styled(Col)`
+    margin-right: 0;
+    @media ${(props) => props.theme.mobile} {
+        margin-right: 70%;
+    }
 `

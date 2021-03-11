@@ -1,25 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
+import theme from '../../style/theme.js';
+import {Row} from 'antd';
 
 import ProductLink from '../molecules/productLink.js';
 
 export default function MainProduct() {
   return (
-    <Wrapper>
+    <CustomRow theme={theme}>
       <ProductLink path={'https://smartstore.naver.com/my_doodle/products/5254327538'} name={'/productImage/slim.jpg'} />
       <ProductLink path={'https://smartstore.naver.com/my_doodle/products/5362152100'} name={'/productImage/bumper.jpg'} />
       <ProductLink path={'https://smartstore.naver.com/my_doodle/products/5362172389'} name={'/productImage/card.jpg'} />
       <ProductLink path={'https://smartstore.naver.com/my_doodle/products/5265774469'} name={'/productImage/smartTok.jpg'} />
-    </Wrapper>
+    </CustomRow>
   );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  padding : 0 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const CustomRow = styled(Row)`
+margin-top: 2.5%;
+
+@media ${(props) => props.theme.mobile} {
+  margin-top: 0;
+}
+`
