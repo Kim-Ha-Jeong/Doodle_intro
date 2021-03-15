@@ -3,12 +3,13 @@ import styled from "styled-components";
 import { Row, Col } from 'react-bootstrap';
 
 import Card from '../molecules/productCard.js';
+import theme from '../../style/theme.js';
 
 export default function ProductGroup() {
 
     return (
         <Wrapper>
-            <Row>
+            <CustomRow theme={theme}>
                 <Col xs={6} md={3}>
                     <Card path={'https://smartstore.naver.com/my_doodle/products/5254327538'}
                         name={'/productImage/slim.jpg'}
@@ -37,7 +38,7 @@ export default function ProductGroup() {
                         text2={'주문제작 그립톡'}
                         price={'15,000원'} />
                 </Col>
-            </Row>
+            </CustomRow>
         </Wrapper>
     );
 }
@@ -46,4 +47,10 @@ const Wrapper = styled.div`
     width: 100%;
     text-align: center;
     display: flex;
+`
+
+const CustomRow = styled(Row)`
+@media ${(props) => props.theme.mobile} {
+    margin: 0 2.5%;
+  }
 `

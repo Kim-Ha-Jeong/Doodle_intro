@@ -158,7 +158,6 @@ body {
 
 .ant-carousel{
   width: 100%;
-  overflow: hidden;
 }
 
 .ant-carousel .slick-dots{
@@ -211,7 +210,21 @@ a:hover, a:visited, a:link{
 .BrainhubCarousel__track .BrainhubCarouselItem:hover {
   transform: scale(1.2);
 }
+#deskRow:focus-within #item,
+#deskRow:hover #item {
+  transform: translateX(-12.5%);
+}
 
+#item:focus ~ #item,
+#item:hover ~ #item {
+  transform: translateX(12.5%);
+}
+
+#deskRow #item:focus,
+#deskRow #item:hover {
+  transform: scale(1.25);
+  z-index: 1;
+}
 `;
 
 export default class Timeline extends App {
@@ -235,5 +248,5 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
   background-color: white;
-  position: relatvie;
+  position: relative;
 `;

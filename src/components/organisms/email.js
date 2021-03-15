@@ -5,8 +5,11 @@ import { Row, Form, Input, Button } from 'antd';
 import styled from 'styled-components';
 import theme from '../../style/theme.js';
 
+
 export default function Email() {
-    const layout = {
+
+    const layout = { 
+        layout: 'vertical',
         labelCol: { span: 4 },
         wrapperCol: { span: 20 },
     };
@@ -26,7 +29,7 @@ export default function Email() {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        //e.preventDefault()
 
         const templateParams = {
             from_name: values.email,
@@ -53,9 +56,12 @@ export default function Email() {
     }
     return (
         <Container theme={theme}>
-            <Form {...layout} onSubmit={handleSubmit}>
+            <Form {...layout} onFinish={handleSubmit}>
                 <Form.Item
                     label='Email'
+                    rules={[{
+                        required: true, message: 'Please input your email'
+                    }]}
                 >
                     <Input
                         type="email"
@@ -68,6 +74,9 @@ export default function Email() {
                 </Form.Item>
                 <Form.Item
                     label='Name'
+                    rules={[{
+                        required: true, message: 'Please input your name'
+                    }]}
                 >
                     <Input
                         type="text"
@@ -79,7 +88,11 @@ export default function Email() {
                     />
                 </Form.Item>
                 <Form.Item
-                    label='Subject'>
+                    label='Subject'
+                    rules={[{
+                        required: true, message: 'Please input your subject'
+                    }]}
+                >
                     <Input
                         type="text"
                         name="subject"
@@ -90,7 +103,11 @@ export default function Email() {
                     />
                 </Form.Item>
                 <Form.Item
-                    label='Message'>
+                    label='Message'
+                    rules={[{
+                        required: true, message: 'Please input your message'
+                    }]}
+                >
                     <TextArea rows={8}
                         type="textarea"
                         name="message"
@@ -101,7 +118,7 @@ export default function Email() {
                     />
                 </Form.Item>
                 <CustomItem theme={theme}>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" htmlType="submit">
                         Submit
                     </Button>
                 </CustomItem>
@@ -113,12 +130,12 @@ export default function Email() {
 
 const Container = styled.div`
   width: 100%;
-  margin-top: 5%;
+  margin: 5% 10%;
   height: fit-content;
   align-items: center;
 
   @media ${(props) => props.theme.mobile}{
-      margin-top: 0;
+      margin: 0;
   }
 `;
 
@@ -133,10 +150,5 @@ styled.label`
 text-align:left;
 `
 const CustomItem = styled(Form.Item)`
-  margin-left: 30%;
   text-align: center;
-
-  @media ${(props) => props.theme.mobile}{
-      margin-left: 0%;
-  }
 `

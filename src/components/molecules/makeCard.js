@@ -16,7 +16,7 @@ export default function MakeCard({ name, text1, text2, price }) {
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
-  margin: 10%;
+  margin: 10% 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
